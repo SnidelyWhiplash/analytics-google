@@ -418,7 +418,7 @@ static id<GAITracker> _tracker = nil;
     if ( ! _tracker) {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Tracker not started. Call startTrackerWithId('UA-XXXXXX'); first."];
         
-    } else if (userId && userId.length > 0) {
+    } else {
         [_tracker set:@"&uid" value: userId];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     }
